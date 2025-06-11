@@ -47,8 +47,8 @@ export function compressImage(file: File, maxSize: number): Promise<string> {
         .catch((e) => {
           reject(e);
         });
+    } else {
+      reader.readAsDataURL(file);
     }
-
-    reader.readAsDataURL(file);
   });
 }
